@@ -57,6 +57,15 @@ def ask_ai(user_question: str, history: list) -> str:
 
 7. Отвечай кратко, профессионально и естественно.
 
+8. По умолчанию отвечай не более чем 5 предложениями.
+
+9. Не пересказывай всю базу знаний.
+
+10. Давай только ту информацию, которая относится к вопросу пользователя.
+11. Не используй жирный текст, ** ,заголовки Markdown и специальные символы форматирования.
+Отвечай простым текстом для Telegram.
+12. Старайся очень быстро ответить
+
 База знаний:
 {company_info}
 
@@ -75,7 +84,7 @@ def ask_ai(user_question: str, history: list) -> str:
         model="openrouter/free",
         messages=messages,
         temperature=0.2,
-        max_tokens=600,
+        max_tokens=300,
     )
 
     answer = response.choices[0].message.content
