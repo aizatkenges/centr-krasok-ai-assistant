@@ -79,7 +79,7 @@ def ask_ai(user_question: str, history: list) -> str:
     messages.append({"role": "user", "content": user_question})
 
     response = client.chat.completions.create(
-        model="openrouter/free",
+        model="meta-llama/llama-3.3-70b-instruct",
         messages=messages,
         temperature=0.2,
         max_tokens=300,
